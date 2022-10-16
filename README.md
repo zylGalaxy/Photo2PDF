@@ -6,7 +6,7 @@
 
 - How to use this?
 
-  You can download CardPrintAssistant.exe from [here]:https://github.com/zylGalaxy/Photo2PDF/raw/main/CardPrintAssistance.exe
+  You can download CardPrintAssistant.exe from *[here]:https://github.com/zylGalaxy/Photo2PDF/raw/main/CardPrintAssistance.exe
 
   When you run the program, you can read the help.txt file and follow the instructions.
 
