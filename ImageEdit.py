@@ -78,7 +78,7 @@ class ImgEditor:
             lineList = line.split()
             cardNum = lineList[-1]
             cardName = line.split(cardNum)[0]
-            cardNum = int(cardNum)
+            cardName = cardName[:len(cardName) - 1]
             cardPath = self.TempPath + cardName + ".jpg"
             cardNum = int(cardNum)
             if os.path.exists(cardPath):

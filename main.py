@@ -33,6 +33,7 @@ class GUI(QMainWindow, UI.UiFrame):
         self.ChildrenWindow.show()
 
     def ReadTextFunc(self):
+        self.editor.initPathListAndDict()
         self.editor.readTxtFile()
         self.ChildrenWindow.show()
 
