@@ -95,6 +95,7 @@ class ImgEditor:
         cardHeight = 86 * mm
         widthMargin = (width - cardWidth * 3) / 2
         heightMargin = (height - cardHeight * 3) / 2
+        heightCal = heightMargin + cardHeight * 3
         count = 0
         for cardPath, cardNum in self.imgDict.items():
             cardNum = int(cardNum)
@@ -103,7 +104,7 @@ class ImgEditor:
                 heightIdx = count // 3
                 count = count + 1
                 cardCanvas.drawImage(cardPath, widthMargin + cardWidth * widthIdx,
-                                     heightMargin + cardHeight * heightIdx, cardWidth, cardHeight)
+                                     heightCal - cardHeight * heightIdx, cardWidth, cardHeight)
                 if count == 9:
                     cardCanvas.showPage()
                     count = 0
