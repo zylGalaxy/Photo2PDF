@@ -1,7 +1,7 @@
-import PIL.Image
 import os
 import shutil
 
+import PIL.Image
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.pdfgen import canvas
@@ -93,19 +93,21 @@ class ImgEditor:
         width, height = A4
         cardWidth = 59 * mm  # 59 * 86
         cardHeight = 86 * mm
-        widthMargin = (width - cardWidth * 3) / 2
-        heightMargin = (height - cardHeight * 3) / 2
-        heightCal = heightMargin + cardHeight * 3
+        width_max = width // cardWidth
+        height_max = height // cardHeight
+        widthMargin = (width - cardWidth * width_max) / 2
+        heightMargin = (height - cardHeight * height_max) / 2
+        heightCal = heightMargin + cardHeight * 2
         count = 0
         for cardPath, cardNum in self.imgDict.items():
             cardNum = int(cardNum)
             for i in range(cardNum):
-                widthIdx = count % 3
-                heightIdx = count // 3
+                widthIdx = count % width_max
+                heightIdx = count // height_max
                 count = count + 1
                 cardCanvas.drawImage(cardPath, widthMargin + cardWidth * widthIdx,
                                      heightCal - cardHeight * heightIdx, cardWidth, cardHeight)
-                if count == 9:
+                if count == width_max * height_max:
                     cardCanvas.showPage()
                     count = 0
         cardCanvas.save()
