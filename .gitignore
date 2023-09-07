@@ -1,0 +1,7 @@
+.git/
+.idea/
+__pycache__/
+photo/
+temp/
+*.txt
+*.pdf
