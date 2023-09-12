@@ -39,6 +39,7 @@ class GUI(QMainWindow, UI.UiFrame):
         self.editor.readTxtFile()
         self.ChildrenWindow.show()
 
+
 if __name__ == '__main__':
     if not os.path.exists('./help.txt'):
         HelpTxt = open('./help.txt', 'w', encoding="utf-8")
@@ -58,7 +59,7 @@ if __name__ == '__main__':
     if not os.path.exists('./temp'):
         os.mkdir('./temp')
     if not os.path.exists('./deck.txt'):
-        deck = open('./deck.txt','w',encoding="utf-8")
+        deck = open('./deck.txt', 'w', encoding="utf-8")
         deck.close()
     app = QApplication(sys.argv)
     mainWindow = GUI()

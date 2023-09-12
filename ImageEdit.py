@@ -76,11 +76,14 @@ class ImgEditor:
             if not line:
                 continue
             lineList = line.split()
+            print(lineList)
             cardNum = lineList[-1]
-            cardName = line.split(cardNum)[0]
+            cardName = lineList[0]
+            # cardName = line.split(cardNum)[0]
             cardName = cardName[:len(cardName) - 1]
             cardPath = self.TempPath + cardName + ".jpg"
             cardNum = int(cardNum)
+            print(cardName, cardNum)
             if os.path.exists(cardPath):
                 self.imgDict[cardPath] = cardNum
         txtFile.close()
